@@ -4,6 +4,7 @@ import com.upgrad.ImageHoster.model.Post;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -37,12 +38,23 @@ public class PostsManager {
         return (boolean) fileOperations.deleteFile(Constants.POST_FILE_PREFIX, postTitle);
     }
 
-    public Post writeToFile(final Post post) {
-
-        return (Post) fileOperations.writeToFile(Constants.POST_FILE_PREFIX, post, post.getTitle());
+    public static Post writeToFile(final Post post) {
+        System.out.println("Start");
+        JDBCConnector jdbcConnector=JDBCConnector.getInstance();
+        String query="insert into posts(title,body,date) values(\' "+post.getTitle()+"\',\'"+post.getBody()+"\',\'03-03-2017\');";
+        jdbcConnector.executeQuery(query);
+        return null;
     }
 
     public Post getPost(final String prefix) {
         return (Post) fileOperations.readFile(Constants.POST_FILE_PREFIX, prefix);
+    }
+        public static void main(String[] args)
+    {
+        Post post =new Post();
+        post.setTitle("Shubham");
+        post.setBody("This is for debug purpose");
+        post.setDate(new Date());
+        PostsManager.writeToFile(post);
     }
 }
