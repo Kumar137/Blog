@@ -13,4 +13,6 @@ public interface PostService {
     Post findById(Long id);
     Post editPost(Post post);
     void deleteById(Post post);
+    
+    //test
 }
