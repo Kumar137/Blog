@@ -46,19 +46,16 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.12</version>
-        <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-test</artifactId>
         <version>1.5.10.RELEASE</version>
-        <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
         <version>4.3.14.RELEASE</version>
-        <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -73,6 +70,11 @@
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
         <version>9.4-1206-jdbc42</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.3.4</version>
     </dependency>
 </dependencies>
 
